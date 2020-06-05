@@ -1,5 +1,7 @@
 package files;
 
+import com.wavelabs.FirstRestAssuredExample;
+
 public class Payload {
 	
 	
@@ -7,20 +9,23 @@ public class Payload {
 		
 		return "{\r\n" + 
 				"  \"location\": {\r\n" + 
-				"    \"lat\": -48.383494,\r\n" + 
-				"    \"lng\": 34.427362\r\n" + 
+				"    \"lat\": -37.383493,\r\n" + 
+				"    \"lng\": 33.427342\r\n" + 
 				"  },\r\n" + 
-				"  \"accuracy\": 44,\r\n" + 
-				"  \"name\": \"332131 house\",\r\n" + 
-				"  \"phone_number\": \"(+91) 9831233 893 3937\",\r\n" + 
-				"  \"address\": \"231, 2313 layout, cohen 09\",\r\n" + 
+				"  \"accuracy\": 40,\r\n" + 
+				"  \"name\": \"Frontlineee house\",\r\n" + 
+				"  \"phone_number\": \"(+91) 984 893 3937\",\r\n" + 
+				"  \"address\": \"49, side layout, cohen 09\",\r\n" + 
 				"  \"types\": [\r\n" + 
-				"    \"1231 park\",\r\n" + 
-				"    \"sadqw\"\r\n" + 
+				"    \"shoe park\",\r\n" + 
+				"    \"shop\"\r\n" + 
 				"  ],\r\n" + 
-				"  \"website\": \"http://googlqqe.com\",\r\n" + 
-				"  \"language\": \"English-IN\"\r\n" + 
+				"  \"website\": \"http://google.com\",\r\n" + 
+				"  \"language\": \"French-IN\"\r\n" + 
 				"}";
 	}
+	
+	
+
 
 }
