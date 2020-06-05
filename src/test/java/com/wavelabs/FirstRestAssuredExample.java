@@ -6,7 +6,10 @@ import io.restassured.path.json.JsonPath;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
+import org.testng.Assert;
+
 import files.Payload;
+import files.ReuseableCode;
 
 public class FirstRestAssuredExample {
 
@@ -19,12 +22,14 @@ public class FirstRestAssuredExample {
 
 		System.out.println(response);
 
-		JsonPath js = new JsonPath(response);
+		JsonPath js = ReuseableCode.rawtoJson(response);
 		String placeid = js.getString("place_id");
+		
+		String newAddress="79 errrMerereauiiaa iooooooo, USA";
 
 		String updateresponse=given().log().all().queryParam("key", "qaclick123").header("Content_Type", "application/json")
 				.body("{\r\n" + "\"place_id\":\"" + placeid + "\",\r\n"
-						+ "\"address\":\"79 errrMerereauiiaa iooooooo, USA\",\r\n" + "\"key\":\"qaclick123\"\r\n" + "}")
+						+ "\"address\":\""+newAddress+"\",\r\n" + "\"key\":\"qaclick123\"\r\n" + "}")
 				.when().put("maps/api/place/update/json").then().log().all().assertThat().statusCode(200).extract()
 				.response().asString();
 		
@@ -36,6 +41,11 @@ public class FirstRestAssuredExample {
 		
 		
 		System.out.println(getresponse);
+		JsonPath js1=ReuseableCode.rawtoJson(getresponse);
+		String actualaddress = js1.getString("address");
+		
+		Assert.assertEquals(actualaddress, newAddress);
 
 	}
+	
 }
