@@ -7,15 +7,18 @@ import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
 import org.testng.Assert;
+import org.testng.annotations.Test;
 
 import files.Payload;
 import files.ReuseableCode;
 
 public class FirstRestAssuredExample {
 
-	public static void main(String[] args) {
+	@Test
+	public static void testmethod() {
 
 		RestAssured.baseURI = "https://rahulshettyacademy.com";
+		//Addplace API:
 		String response = given().log().all().queryParam("key", "qaclick123").header("Content_Type", "application/json")
 				.body(Payload.AddPlace()).when().post("maps/api/place/add/json").then().log().all().assertThat().statusCode(200)
 				.extract().response().asString();
