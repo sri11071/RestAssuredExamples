@@ -6,12 +6,14 @@
 			<class name="com.udemyAPI.SumValidation" />
 			<class name="com.udemyAPI.ComplexJsonParse" />
 			<class name="com.udemyAPI.UdemyRestAssuredBasics" />
+			<class name="com.udemyAPI.UdemyExapleLibraryAPI" />
 		</classes>
 	</test>
 	<test thread-count="5" name="MyTests">
 		<classes>
 			<class name="com.wavelabs.ComplexJsonTasks" />
 			<class name="com.wavelabs.FirstRestAssuredExample" />
+			<class name="com.wavelabs.LibraryAPITest" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
