@@ -14,6 +14,7 @@
 			<class name="com.wavelabs.ComplexJsonTasks" />
 			<class name="com.wavelabs.FirstRestAssuredExample" />
 			<class name="com.wavelabs.LibraryAPITest" />
+			<class name="com.jiraAPI.JiraAPIAddCommentExample"/>
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
