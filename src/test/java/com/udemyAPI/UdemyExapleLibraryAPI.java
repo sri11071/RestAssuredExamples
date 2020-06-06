@@ -39,7 +39,16 @@ public class UdemyExapleLibraryAPI {
 
 		System.out.println(id);
 
-		// deleteBOok
+		given().header("Content-Type", "application/json").
+		body("{\r\n" + " \r\n" + "\"ID\" : \"" + id + "\"\r\n" + " \r\n" + "} ").
+
+		when().
+
+		post("/Library/DeleteBook.php").
+
+		then().assertThat().statusCode(200).
+
+		extract().response().asString();
 
 	}
 
