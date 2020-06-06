@@ -32,8 +32,9 @@ public class LibraryAPITest {
 
 		String deleteResponse = given().log().all().header("Content_Type", "application/json")
 				.body("{\r\n" + " \r\n" + "\"ID\" : \"" + bookId + "\"\r\n" + " \r\n" + "} ").when()
-				.post("/Library/DeleteBook.php").then().log().all().assertThat().statusCode(200).extract().response().asString();
-		System.out.println("Book successfully Deleted "+deleteResponse);
+				.post("/Library/DeleteBook.php").then().log().all().assertThat().statusCode(200).extract().response()
+				.asString();
+		System.out.println("Book successfully Deleted " + deleteResponse);
 	}
 
 	@DataProvider

@@ -13,7 +13,7 @@ public class UdemyExapleLibraryAPI {
 
 	@Test(dataProvider = "BooksData")
 
-	public void addBook(String isbn, String aisle)
+	public void addBook(String name,String isbn, String aisle,String author)
 
 	{
 
@@ -23,7 +23,7 @@ public class UdemyExapleLibraryAPI {
 
 				header("Content-Type", "application/json").
 
-				body(payloads.Addbook(isbn, aisle)).
+				body(payloads.Addbook(name,isbn, aisle,author)).
 
 				when().
 
@@ -40,7 +40,7 @@ public class UdemyExapleLibraryAPI {
 
 		String deleteResponse = given().log().all().header("Content_Type", "application/json")
 				.body("{\r\n" + " \r\n" + "\"ID\" : \"" + bookId + "\"\r\n" + " \r\n" + "} ").when()
-				.post("/Library/DeleteBook.php").then().log().all().assertThat().statusCode(200).extract().response()
+				.delete("/Library/DeleteBook.php").then().log().all().assertThat().statusCode(200).extract().response()
 				.asString();
 		System.out.println("Book successfully Deleted " + deleteResponse);
 
@@ -56,8 +56,7 @@ public class UdemyExapleLibraryAPI {
 
 //multidimensional array= collection of arrays
 
-		return new Object[][] { { "oj3k2", "93632" }, { "ch22sas", "42523" }, { "as22aqw", "52233" } };
-
+		return new Object[][] { {"888122", "J212", "J345","weqew" },{"432", "L212", "K93","211eqw" },{"1231", "J9282", "J829212","8293wwe" }};
 	}
 
 }
