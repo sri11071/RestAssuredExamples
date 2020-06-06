@@ -35,20 +35,14 @@ public class UdemyExapleLibraryAPI {
 
 		JsonPath js = ReUsableMethods.rawToJson(resp);
 
-		String id = js.get("ID");
+		String bookId = js.get("ID");
+		System.out.println(bookId);
 
-		System.out.println(id);
-
-		given().header("Content-Type", "application/json")
-				.body("{\r\n" + " \r\n" + "\"ID\" : \"" + id + "\"\r\n" + " \r\n" + "} ").
-
-				when().
-
-				post("/Library/DeleteBook.php").
-
-				then().assertThat().statusCode(200).
-
-				extract().response().asString();
+		String deleteResponse = given().log().all().header("Content_Type", "application/json")
+				.body("{\r\n" + " \r\n" + "\"ID\" : \"" + bookId + "\"\r\n" + " \r\n" + "} ").when()
+				.post("/Library/DeleteBook.php").then().log().all().assertThat().statusCode(200).extract().response()
+				.asString();
+		System.out.println("Book successfully Deleted " + deleteResponse);
 
 	}
 
@@ -62,7 +56,7 @@ public class UdemyExapleLibraryAPI {
 
 //multidimensional array= collection of arrays
 
-		return new Object[][] { { "ojfwty22", "93632" }, { "chssas", "42523" }, { "asasaaqw", "52233" } };
+		return new Object[][] { { "oj3k2", "93632" }, { "ch22sas", "42523" }, { "as22aqw", "52233" } };
 
 	}
 
