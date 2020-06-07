@@ -8,7 +8,6 @@ import files.ReuseableCode;
 import io.restassured.RestAssured;
 import static io.restassured.RestAssured.*;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.util.Properties;
 
@@ -31,7 +30,7 @@ public class JiraAPIGetDetailsandValidate {
 		SessionFilter session = new SessionFilter();
 
 		given().log().all().header("Content-Type", "application/json").filter(session)
-				.body("{ \"username\": \"Srinivas\", \"password\": \"admin@123\" }").when().post("rest/auth/1/session")
+				.body("{ \"username\": \""+pos.getProperty("username")+"\", \"password\": \""+pos.getProperty("password")+"\" }").when().post("rest/auth/1/session")
 				.then().log().all().extract().response().asString();
 
 		
