@@ -31,7 +31,7 @@ public class JiraAPIGetDetailsandValidate {
 
 		given().log().all().header("Content-Type", "application/json").filter(session)
 				.body("{ \"username\": \""+pos.getProperty("username")+"\", \"password\": \""+pos.getProperty("password")+"\" }").when().post("rest/auth/1/session")
-				.then().log().all().extract().response().asString();
+				.then().log().all().extract().response().asString();  
 
 		
 		 String createResponse = given().header("Content-Type",
