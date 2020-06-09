@@ -1,17 +1,10 @@
 package com.wavelabs;
 
-import static io.restassured.RestAssured.*;
-
+import static io.restassured.RestAssured.given;
 import java.util.ArrayList;
 import java.util.List;
-
-import org.testng.annotations.Test;
-
 import com.wavelabs.pojo.AddPlaceAPI;
 import com.wavelabs.pojo.Location;
-
-import files.Payload;
-import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.ContentType;
