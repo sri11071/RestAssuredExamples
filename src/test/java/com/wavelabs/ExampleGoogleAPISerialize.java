@@ -22,7 +22,7 @@ public class ExampleGoogleAPISerialize {
 		p.setAccuracy(50);
 		p.setAddress("Srinivas");
 		p.setLanguage("English -EN");
-		
+		p.setName("Frontline house");
 		List<String> mytype=new ArrayList<String>();
 		mytype.add("shoee");
 		mytype.add("wwiqwo");
